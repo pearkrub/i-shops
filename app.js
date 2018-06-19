@@ -1,11 +1,12 @@
 var express = require('express')
 
 var app = express()
+var port = 8080
 
-app.listen(3000)
-
-app.use('/', function(req, res) {
+app.use(express.static(__dirname))
+app.get('/', function(req, res) {
     res.end('555')
 })
-
-console.log('Hello')
+app.listen(port, function() {
+    console.log('Hello')
+})
